@@ -5,11 +5,12 @@
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
-    "recast": "^0.11.22"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "recast": "^0.16.0"
   },
   "scripts": {
-    "codemod": "babel \"src/**/*.js\" --out-dir ."
-  }
+    "codemod": "babel \"/Users/steve.zelaznik/src/icisstaff/facesheet/tests/**/*.js\" --out-dir ."
+  },
+  "dependencies": {}
 }
