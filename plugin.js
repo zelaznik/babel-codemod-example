@@ -1,16 +1,21 @@
-export default function(babel) {
+module.exports = function(babel) {
   const { types: t } = babel;
 
   let nativeDomHelpersImports = [];
   let importedFindAll;
   let findAllName = "findAll";
+  let matchesWereFound;
 
   return {
-    name: "ast-transform", // not required
+    name: "chirp-jquery-removal", // not required
     visitor: {
       Program: {
         exit(program) {
           if (importedFindAll) {
+            return;
+          }
+
+          if (!matchesWereFound) {
             return;
           }
 
@@ -161,6 +166,8 @@ export default function(babel) {
         if (!isMatch) {
           return;
         }
+
+        matchesWereFound = true;
 
         origArguments[0] = t.callExpression(
           t.identifier(findAllName),

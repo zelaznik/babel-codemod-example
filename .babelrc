@@ -1,11 +1,11 @@
 {
   "plugins": [
-    "./plugin.js"
+    "./plugin.js",
   ],
   "parserOpts": {
-    "parser": "recast"
+    "parser": "babylon",
   },
   "generatorOpts": {
-    "generator": "recast"
+    "generator": "babylon",
   }
 }
